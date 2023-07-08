@@ -27,10 +27,10 @@ public class BulletBehavior : MonoBehaviour
             //if the object has the rock tag destroy the bullet
             Destroy(gameObject);
         }
-        else if(other.gameObject.tag == "Fish")
+        else if(other.gameObject.CompareTag("Fish"))
         {
             other.gameObject.GetComponent<HP>().TakeDamage(damage);
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
             
     }

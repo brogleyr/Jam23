@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 2899655499308320320}
   - component: {fileID: 5785620379981624507}
   m_Layer: 8
-  m_Name: Boat
+  m_Name: Fisher
   m_TagString: Boat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

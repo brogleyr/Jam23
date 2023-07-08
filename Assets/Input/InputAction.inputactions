@@ -1,1 +1,56 @@
-{}
+{
+    "name": "InputAction",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "f2189c33-2c3f-47d2-9330-66be22500384",
+            "actions": [
+                {
+                    "name": "onMove",
+                    "type": "Value",
+                    "id": "653fefa7-112e-4d12-8268-6534aa1adb71",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9fb62383-6315-4de8-a269-97b3315bd793",
+                    "path": "<Mouse>/position",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "onMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9cd4fa27-6a81-491d-86d4-185050222acf",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "onMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "606db57d-8c27-483c-8d33-48ea3e2803bc",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "onMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
