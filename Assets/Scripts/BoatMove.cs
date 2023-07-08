@@ -40,13 +40,8 @@ public class BoatMove : MonoBehaviour
             Destroy(transform.GetChild(0).gameObject);
             attached = false;
             animator.SetTrigger("BoatDestroyed");
-            DeathWait();
+            Destroy(gameObject, 1f);
         }
-    }
-
-    IEnumerator DeathWait() {
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
     }
 
     void MoveFisherman() {

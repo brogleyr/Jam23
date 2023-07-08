@@ -418,6 +418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4027805352788730062, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: moveSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9009149379872600151, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
       propertyPath: m_Name
       value: Fish

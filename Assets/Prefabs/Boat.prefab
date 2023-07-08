@@ -516,8 +516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b898b2627a70b964c874e568f0117815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineLength: 20
-  lineStrength: 1
+  lineLength: 15
+  lineStrength: 5
   reelSpeed: 0.001
 --- !u!95 &2899655499308320320
 Animator:
