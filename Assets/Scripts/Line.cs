@@ -29,7 +29,7 @@ public class Line : MonoBehaviour
         if (other.gameObject.name == "Fish") {
             attached = true;
             transform.GetChild(0).gameObject.SetActive(false);
-            transform.parent.gameObject.GetComponent<Fisherman>().SetAttached(true);
+            transform.parent.gameObject.GetComponent<BoatMove>().SetAttached(true);
         }
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7760571148032825337}
   - component: {fileID: 3081285271103928052}
+  - component: {fileID: 922418130174743042}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &922418130174743042
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656316120573787188}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0b5f4b62dc3ccb4fb3e455d279fabb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3666548193356131041
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +417,7 @@ GameObject:
   - component: {fileID: 5977909004100394055}
   - component: {fileID: 2074763929934465413}
   - component: {fileID: 3956185536972909249}
+  - component: {fileID: 2899655499308320320}
   m_Layer: 8
   m_Name: Boat
   m_TagString: Boat
@@ -479,7 +502,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.4, y: 0}
-  m_Size: {x: 6.07, y: 3.31}
+  m_Size: {x: 5.67, y: 2.71}
   m_Direction: 1
 --- !u!114 &3956185536972909249
 MonoBehaviour:
@@ -493,5 +516,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b898b2627a70b964c874e568f0117815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineLength: 10
-  lineStrength: 4
+  lineLength: 20
+  lineStrength: 1
+  reelSpeed: 0.001
+--- !u!95 &2899655499308320320
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481134755223465721}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0b5f4b62dc3ccb4fb3e455d279fabb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

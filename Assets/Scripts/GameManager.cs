@@ -18,9 +18,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void BoatCrash(GameObject boat) {
+    public void BoatCrash() {
         score++;
         Debug.Log("Score: " + score);
-        Destroy(boat);
     }
 }
