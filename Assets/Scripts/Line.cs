@@ -5,15 +5,15 @@ using UnityEngine;
 public class Line : MonoBehaviour
 {
     
-    public LineRenderer lr;
+    public LineRenderer lineRenderer;
     private bool attached = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        lr.sortingOrder = 1;
-        lr.material = new Material (Shader.Find ("Sprites/Default"));
-        lr.material.color = Color.black; 
+        lineRenderer.sortingOrder = 1;
+        lineRenderer.material = new Material (Shader.Find ("Sprites/Default"));
+        lineRenderer.material.color = Color.black;
     }
 
     // Update is called once per frame
@@ -21,14 +21,15 @@ public class Line : MonoBehaviour
         if (attached) {
             transform.position = GameObject.Find("Fish").transform.position;
         }
-        lr.SetPosition(0, transform.position);
-        lr.SetPosition(1, transform.parent.position);
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, transform.parent.position);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.name == "Fish") {
             attached = true;
+            GetComponent<SpriteRenderer>().enabled = false;
+            transform.parent.gameObject.GetComponent<Fisherman>().SetAttached(true);
         }
     }
-
 }
