@@ -36,10 +36,17 @@ public class BoatMove : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Rock") {
             GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-            animator.SetTrigger("BoatDestroyed");
             manager.BoatCrash();
-            Destroy(gameObject);
+            Destroy(transform.GetChild(0).gameObject);
+            attached = false;
+            animator.SetTrigger("BoatDestroyed");
+            DeathWait();
         }
+    }
+
+    IEnumerator DeathWait() {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 
     void MoveFisherman() {
