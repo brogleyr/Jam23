@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NavyBoat : MonoBehaviour
 {
@@ -40,7 +42,7 @@ public class NavyBoat : MonoBehaviour
 
             //Flips if ship will go left or right
             //Putting this in when mines spawn so everytime it drops a mine it has a chance to swap its direction when coming near a rock
-            if (Random.Range(0, 9) > 5)
+            if (Random.Range(0, 9) > 4)
             {
                 dir = 1;
             }
@@ -60,6 +62,16 @@ public class NavyBoat : MonoBehaviour
         if (collision.CompareTag("Rock"))
         {
             transform.Rotate(Vector3.forward * 50* dir * Time.deltaTime);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Boat")
+        {
+                //scoreManager.BoatCrash(transform);
+                //animator.SetTrigger("BoatDestroyed");
+
+            Destroy(gameObject, 1f);
         }
     }
 }
