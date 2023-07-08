@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4821628254220201854
 MonoBehaviour:
@@ -46,9 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rock: {fileID: 6341767605017578815, guid: 86d66ab5921101347afaa3458172a5d7, type: 3}
   boat: {fileID: 8481134755223465721, guid: 182ab5594179370468227a648a5f2859, type: 3}
-  closeDistance: 40
-  farDistance: 150
-  MaxRocks: 25
-  MaxBoats: 100
+  closeRockDistance: 150
+  farRockDistance: 600
+  closeBoatDistance: 50
+  farBoatDistance: 150
+  MaxRocks: 300
+  MaxBoats: 45
   spawnRadiusRock: 30
-  spawnRadiusBoat: 10
+  spawnRadiusBoat: 3
