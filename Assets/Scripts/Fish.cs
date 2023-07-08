@@ -12,20 +12,32 @@ public class Fish : MonoBehaviour
     public float baseMoveSpeed;
     public float speedGrowthFactor = 1;
     public float topSpeed = 50f;
+    public float boundingSpeed = 500f;
     public float baseScale = 1;
     public float scaleGrowthFactor = 0.06f;
     public float topScale = 5;
     
     private ScoreManager scoreManager;
+    private GameManager gameManager;
 
     void Start() {
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    void Update() {
+        if (moveSpeed > boundingSpeed) {
+            gameManager.Transcend();
+        }
     }
     
     void FixedUpdate()
     {
-        moveSpeed = Mathf.Min(baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo()), topSpeed);
-        float newScale = Mathf.Min(baseScale + (scaleGrowthFactor * scoreManager.GetCombo()), topScale);
+        //moveSpeed = Mathf.Min(baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo()), topSpeed);
+        //float newScale = Mathf.Min(baseScale + (scaleGrowthFactor * scoreManager.GetCombo()), topScale);
+        moveSpeed = baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo());
+        float newScale = baseScale + (scaleGrowthFactor * scoreManager.GetCombo());
+
         transform.localScale = new Vector3(newScale, newScale, newScale);
 
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
