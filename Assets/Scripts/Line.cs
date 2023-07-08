@@ -18,8 +18,9 @@ public class Line : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (attached) {
-            transform.position = GameObject.Find("Fish").transform.position;
+        if (attached)
+        {
+            transform.position = GameObject.Find("Fish").GetComponentInChildren<Transform>().transform.position;
         }
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, transform.parent.position);
