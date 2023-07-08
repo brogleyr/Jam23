@@ -13,12 +13,10 @@ public class SpawnerScript : MonoBehaviour
     public GameObject boat;
 
     //Spawn Boundries
-    public float closeDistance;
-    public float farDistance;
-    // public float TopBoundry = 0;
-    // public float BottomBoundry = 0;
-    // public float RightBoundry = 0;
-    // public float LeftBoundry = 0;
+    public float closeRockDistance;
+    public float farRockDistance;
+    public float closeBoatDistance;
+    public float farBoatDistance;
 
     //Rock Count
     public int MaxRocks;
@@ -27,19 +25,18 @@ public class SpawnerScript : MonoBehaviour
     //Boat Spawn Mechanism
     public int MaxBoats;
     private int CurrentBoats = 0;
-    // public float spawnRate = 0;
-    // private float spawnTime = 0;
 
     //Radius around rocks where no rocks can spawn
     public float spawnRadiusRock;
     public float spawnRadiusBoat;
 
     private int gameObjectFindCounter = 0;
+    private Transform fishTransform;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fishTransform = GameObject.Find("Fish").transform;
     }
 
     // Update is called once per frame
@@ -55,13 +52,13 @@ public class SpawnerScript : MonoBehaviour
         }
 
         while (CurrentRocks < MaxRocks) {
-            if (spawnObject(rock)) {
+            if (spawnObject(rock, closeRockDistance, farRockDistance)) {
             }
             CurrentRocks++;
         }
         //UnityEngine.Debug.Log("Current spawn time: " + spawnTime);
         while (CurrentBoats < MaxBoats) {
-            if (spawnObject(boat)) {
+            if (spawnObject(boat, closeBoatDistance, farBoatDistance)) {
             };
             CurrentBoats++;
         }
@@ -69,12 +66,12 @@ public class SpawnerScript : MonoBehaviour
         
     }
 
-    bool spawnObject(GameObject prefab)
+    bool spawnObject(GameObject prefab, float minDistance, float maxDistance)
     {
         float spawnAngle = Random.Range(0, 2.0f * Mathf.PI);
-        float spawnDistance = Random.Range(closeDistance, farDistance);
+        float spawnDistance = Random.Range(minDistance, maxDistance);
         Vector3 spawnPositionFishSpace = new Vector3(Mathf.Sin(spawnAngle)*spawnDistance, Mathf.Cos(spawnAngle)*spawnDistance, 0);
-        Vector3 spawnPosition = GameObject.Find("Fish").transform.position + spawnPositionFishSpace;
+        Vector3 spawnPosition = fishTransform.position + spawnPositionFishSpace;
         Vector3 spawnRotation = new Vector3(0, 0, Random.Range(-180, 180));
 
         Collider2D spawnCollision = Physics2D.OverlapCircle(spawnPosition, spawnRadiusRock);

@@ -219,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 7324751139936940524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
+  m_LocalScale: {x: 0.82, y: 0.82, z: 0.82}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6955341159488689979}
@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: 2074763929934465413}
   - component: {fileID: 3956185536972909249}
   - component: {fileID: 2899655499308320320}
+  - component: {fileID: 5785620379981624507}
   m_Layer: 8
   m_Name: Boat
   m_TagString: Boat
@@ -455,8 +456,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 1
-  m_AngularDrag: 5
+  m_LinearDrag: 0.98
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -501,8 +502,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.4, y: 0}
-  m_Size: {x: 5.67, y: 2.71}
+  m_Offset: {x: -1.4229912, y: 0.00000016963375}
+  m_Size: {x: 5.0416656, y: 2.0970008}
   m_Direction: 1
 --- !u!114 &3956185536972909249
 MonoBehaviour:
@@ -517,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineLength: 15
-  lineStrength: 5
+  lineStrength: 15
   reelSpeed: 0.001
 --- !u!95 &2899655499308320320
 Animator:
@@ -540,3 +541,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5785620379981624507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481134755223465721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1f1a5d5626cd84f9186641adaf5a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnCounter: 60
+  despawnDistance: 150

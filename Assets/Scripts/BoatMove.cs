@@ -17,6 +17,9 @@ public class BoatMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = transform.GetChild(1).gameObject.GetComponent<Animator>();
+        float lineAngle = Random.Range(0, Mathf.PI);
+        Vector3 lineStartPosition = new Vector3(Mathf.Sin(lineAngle)*lineLength, Mathf.Cos(lineAngle)*lineLength, 0);
+        transform.GetChild(0).position = transform.TransformPoint(lineStartPosition);
         //rb.centerOfMass = centerOfMass;
     }
 
@@ -24,12 +27,17 @@ public class BoatMove : MonoBehaviour
     void Update()
     {
         if (attached) {
-            MoveFisherman();
             lineLength -= reelSpeed;
             if (lineLength <= 0) {
                 Debug.Log("NOOO");
                 Destroy(gameObject); // TODO make something happen 
             }
+        }
+    }
+
+    private void FixedUpdate() {
+        if (attached) {
+            MoveFisherman();
         }
     }
 
@@ -55,7 +63,8 @@ public class BoatMove : MonoBehaviour
         Vector2 lineVector = transform.GetChild(0).position - transform.position; 
         if (lineVector.magnitude > lineLength) {
             Vector2 idealSpot = lineVector.normalized * lineLength;
-            GetComponent<Rigidbody2D>().AddForceAtPosition(idealSpot * lineStrength, transform.position, ForceMode2D.Force);
+            float distToIdealSpot = Vector2.Distance(idealSpot, transform.position);
+            GetComponent<Rigidbody2D>().AddForceAtPosition(idealSpot.normalized * distToIdealSpot * lineStrength, transform.position, ForceMode2D.Force);
         }
     }
 
