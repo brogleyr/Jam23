@@ -4,16 +4,27 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    public bool seeEnemy = false;
+    //can you see the enemy
+    bool seeEnemy = false;
+    //how fast can you turn
+    public float rotationSpeed = 90;
+    //are you shooting?
     bool isShooting = false;
+    //shooter scipt
     Shooter shooter;
-    CircleCollider2D collider;
-    Camera camera;
+    //the collider
+    CircleCollider2D m_CirlceCollider2D;
+    //the main camera
+    Camera m_camera;
+    //target of turret
+    Transform target;
+    //Alligns assets incase their roation is off
+    public float rotationModifier = 45;
     // Start is called before the first frame update
     void Start()
     {
-        collider = GetComponent<CircleCollider2D>();
-        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        m_CirlceCollider2D = GetComponent<CircleCollider2D>();
+        m_camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         shooter = GetComponent<Shooter>();
     }
 
@@ -27,27 +38,46 @@ public class Turret : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D other)
      {
-        Debug.Log("I see" + other.name);
-        if (other.gameObject.tag == "Mouth")
+        if (other.gameObject.CompareTag("Fish") == true)
+        {
             seeEnemy = true;
+            target = other.transform;
+        }
+            
         
      }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("I don't see" + other.name);
-        if (other.gameObject.tag == "Mouth")
+        if (other.gameObject.CompareTag("Fish") == true)
+        {
             seeEnemy = false;
+        }
+           
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        collider.radius = camera.orthographicSize;
+        if (seeEnemy)
+        {
+            Rotate(target);
+        }
+            
+        m_CirlceCollider2D.radius = m_camera.orthographicSize;
         while (seeEnemy && !isShooting)
         {
             StartCoroutine(FireContinuously());
         }
-        
     }
+    void Rotate(Transform target)
+    {
+        {
+            Vector3 vectorToTarget = target.transform.position - transform.position;
+            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
+            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * rotationSpeed);
+        }
+    }
+
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6490418521262309914}
   - component: {fileID: 1213394668974260134}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Mouth
   m_TagString: Mouth
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507834677489335122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26, y: 0, z: 0}
+  m_LocalPosition: {x: 0.45, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +65,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.54, y: 0}
-  m_Size: {x: 2.41, y: 1.66}
+  m_Size: {x: 2.86, y: 2.89}
   m_Direction: 1
 --- !u!1 &5038503492031869805
 GameObject:
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 1777394654745698278}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,9 +160,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2974222748579442693}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: CameraFocus
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 4027805352788730062}
   - component: {fileID: -681525278861008100}
   - component: {fileID: 2002483660094685361}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Fish
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9009149379872600151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11630511, y: 0.29331198, z: 0}
+  m_LocalPosition: {x: 4.95, y: 1.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9009149379872600151}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 

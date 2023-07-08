@@ -16,7 +16,7 @@ public class BulletBehavior : MonoBehaviour
         //Find the rigidbody attached to this object
         rb = this.GetComponent<Rigidbody2D>();
         //Apply a forward vector to the bullet at a given speed
-        rb.velocity = transform.up * speed;
+        rb.velocity = transform.right * speed;
         //Start countdown until bulletdespawn
         StartCoroutine(Lifetime());
     }
