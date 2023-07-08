@@ -13,26 +13,26 @@ public class SpawnerScript : MonoBehaviour
     public GameObject boat;
 
     //Spawn Boundries
-    public float closeDistance = 60;
-    public float farDistance = 300;
+    public float closeDistance;
+    public float farDistance;
     // public float TopBoundry = 0;
     // public float BottomBoundry = 0;
     // public float RightBoundry = 0;
     // public float LeftBoundry = 0;
 
     //Rock Count
-    public int MaxRocks = 30;
+    public int MaxRocks;
     private int CurrentRocks = 0;
 
     //Boat Spawn Mechanism
-    public int MaxBoats = 100;
+    public int MaxBoats;
     private int CurrentBoats = 0;
     // public float spawnRate = 0;
     // private float spawnTime = 0;
 
     //Radius around rocks where no rocks can spawn
-    public float spawnRadiusRock = 20;
-    public float spawnRadiusBoat = 10;
+    public float spawnRadiusRock;
+    public float spawnRadiusBoat;
 
     private int gameObjectFindCounter = 0;
 
@@ -47,59 +47,42 @@ public class SpawnerScript : MonoBehaviour
     {
         if (gameObjectFindCounter <= 0) {
             CurrentRocks = GameObject.FindGameObjectsWithTag("Rock").Length;
-            Debug.Log(CurrentRocks + " rocks found");
+            CurrentBoats = GameObject.FindGameObjectsWithTag("Boat").Length;
             gameObjectFindCounter = 60;
         }
         else {
             gameObjectFindCounter--;
         }
 
-        while (CurrentRocks < MaxRocks)
-        {
-            spawnRock();
+        while (CurrentRocks < MaxRocks) {
+            if (spawnObject(rock)) {
+            }
+            CurrentRocks++;
         }
         //UnityEngine.Debug.Log("Current spawn time: " + spawnTime);
-        if (CurrentBoats < MaxBoats)
-        {
-            //spawnBoat();
+        while (CurrentBoats < MaxBoats) {
+            if (spawnObject(boat)) {
+            };
+            CurrentBoats++;
         }
 
         
     }
 
-    void spawnRock()
+    bool spawnObject(GameObject prefab)
     {
-        if (CurrentRocks < MaxRocks)
+        float spawnAngle = Random.Range(0, 2.0f * Mathf.PI);
+        float spawnDistance = Random.Range(closeDistance, farDistance);
+        Vector3 spawnPositionFishSpace = new Vector3(Mathf.Sin(spawnAngle)*spawnDistance, Mathf.Cos(spawnAngle)*spawnDistance, 0);
+        Vector3 spawnPosition = GameObject.Find("Fish").transform.position + spawnPositionFishSpace;
+        Vector3 spawnRotation = new Vector3(0, 0, Random.Range(-180, 180));
+
+        Collider2D spawnCollision = Physics2D.OverlapCircle(spawnPosition, spawnRadiusRock);
+        if (spawnCollision == null)
         {
-            float spawnAngle = Random.Range(0, 2.0f * Mathf.PI);
-            float spawnDistance = Random.Range(closeDistance, farDistance);
-            Vector3 spawnPositionFishSpace = new Vector3(Mathf.Sin(spawnAngle)*spawnDistance, Mathf.Cos(spawnAngle)*spawnDistance, 0);
-            Vector3 spawnPosition = GameObject.Find("Fish").transform.position + spawnPositionFishSpace;
-            Vector3 spawnRotation = new Vector3(0, 0, Random.Range(-180, 180));
-
-            Collider2D spawnCollision = Physics2D.OverlapCircle(spawnPosition, spawnRadiusRock);
-            UnityEngine.Debug.Log("Trying to Spawn Rock " + CurrentRocks);
-            if (spawnCollision == null)
-            {
-                Instantiate(rock, spawnPosition, Quaternion.Euler(spawnRotation));
-                CurrentRocks++;
-            }
-
-
+            Instantiate(prefab, spawnPosition, Quaternion.Euler(spawnRotation));
+            return true;
         }
+        return false;
     }
-
-    void spawnBoat()
-    {
-        // var position = new Vector3(Random.Range(LeftBoundry, RightBoundry), Random.Range(BottomBoundry, TopBoundry), 0);
-        // var rot = new Vector3(0, 0, Random.Range(-180, 180));
-        // Collider2D spawnCollision = Physics2D.OverlapCircle(position, spawnRadiusBoat);
-        // if (spawnCollision == false)
-        // {
-        //     Instantiate(boat, position, Quaternion.Euler(rot));
-        //     UnityEngine.Debug.Log("Spawning boat ");
-        // }
-    }
-
-    
 }
