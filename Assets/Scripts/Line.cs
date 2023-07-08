@@ -33,8 +33,8 @@ public class Line : MonoBehaviour
         if (other.gameObject.name == "Fish") {
             attached = true;
             transform.GetChild(0).gameObject.SetActive(false);
-            transform.parent.gameObject.GetComponent<BoatMove>().SetAttached(true);
-            scoreManager.OnTheLine();
+            transform.parent.gameObject.GetComponent<FishingBoatPull>().SetAttached(true);
+            // scoreManager.OnTheLine();
         }
     }
 }

@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     
     private int score = 0;
     private int combo = 0;
-    private int onTheLine = 0;
+    //private int onTheLine = 0;
     private float comboCoolDownStart = 5;
     private float comboCooldown = 5; //seconds
     private float maxComboFontSize = 42;
@@ -34,26 +34,26 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    public void OnTheLine() {
-        onTheLine++;
-    }
+    // public void OnTheLine() {
+    //     onTheLine++;
+    // }
 
-    public void OffTheLine() {
-        onTheLine--;
-    }
+    // public void OffTheLine() {
+    //     onTheLine--;
+    // }
     
 
     public void BoatCrash(Transform crashedBoat) {
         ComboUp();
-        onTheLine = 0;
-        GameObject[] boats = GameObject.FindGameObjectsWithTag("Boat");
-        foreach (GameObject boat in boats) {
-            if (boat.GetComponent<BoatMove>().GetAttached()) {
-                onTheLine++;
-            }
-        }
-        score += combo * onTheLine;
-        OffTheLine();
+        //onTheLine = 0;
+        // GameObject[] boats = GameObject.FindGameObjectsWithTag("Boat");
+        // foreach (GameObject boat in boats) {
+        //     if (boat.GetComponent<FishingBoatPull>().GetAttached()) {
+        //         onTheLine++;
+        //     }
+        // }
+        score += combo; //* onTheLine;
+        //OffTheLine();
     }
 
     private void UpdateUI() {

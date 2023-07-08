@@ -48,4 +48,12 @@ public class Fish : MonoBehaviour
         rb.MovePosition(rb.position + ((Vector2)transform.right * moveSpeed * Time.deltaTime));
         //Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        Debug.Log("Collision!");
+        if (other.gameObject.tag == "Rock") {
+            float bounce = 700f;
+            rb.AddForce(other.contacts[0].normal * bounce, ForceMode2D.Force);
+        }
+    }
 }

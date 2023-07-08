@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoatMove : MonoBehaviour
+public class FishingBoatPull : MonoBehaviour
 {
     public float lineLength;
     public float lineStrength;
@@ -31,7 +31,7 @@ public class BoatMove : MonoBehaviour
             lineLength -= reelSpeed;
             if (lineLength <= 0) {
                 Debug.Log("NOOO");
-                scoreManager.OffTheLine();
+                //scoreManager.OffTheLine();
                 Destroy(gameObject); // TODO make something happen 
             }
         }

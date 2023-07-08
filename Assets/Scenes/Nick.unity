@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &357639006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7041310323572670430, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+  m_PrefabInstance: {fileID: 1465683924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &373608758
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +386,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423903569}
   m_CullTransparentMesh: 1
+--- !u!114 &439505898 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2726934802186721783, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+  m_PrefabInstance: {fileID: 1465683924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &710233986
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,11 +588,11 @@ PrefabInstance:
     - target: {fileID: 4104986046242864519, guid: 3a24dab44e5ce2e428b08befa59cfc88, type: 3}
       propertyPath: comboUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 439505898}
     - target: {fileID: 4104986046242864519, guid: 3a24dab44e5ce2e428b08befa59cfc88, type: 3}
       propertyPath: scoreUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 357639006}
     - target: {fileID: 5250128176982522000, guid: 3a24dab44e5ce2e428b08befa59cfc88, type: 3}
       propertyPath: m_Name
       value: ScoreManager
@@ -851,7 +873,7 @@ PrefabInstance:
     - target: {fileID: 224432835795061825, guid: 7ffcacad8fb39644792643f269e7c03a, type: 3}
       propertyPath: finalTime
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1431266361}
     - target: {fileID: 872027246893658011, guid: 7ffcacad8fb39644792643f269e7c03a, type: 3}
       propertyPath: m_RootOrder
       value: 4
