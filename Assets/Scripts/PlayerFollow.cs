@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerFollow : MonoBehaviour
 {
     //What is the camera following
-    public Transform target;
+    Transform target;
     //How smooth will it follow it
     public float smoothSpeed = 0.125f;
     //The difference between the starting camera's start and the players start so it can maintain it
@@ -15,6 +15,7 @@ public class PlayerFollow : MonoBehaviour
     public float zoomToSpeedRatio = 0.1f;
     private void Start()
     {
+        target = GameObject.Find("Fish").GetComponent<Transform>();
         offset = transform.position - target.transform.GetChild(2).position;
         cam = GetComponent<Camera>();
         zoom = cam.orthographicSize;
