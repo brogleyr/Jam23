@@ -43,18 +43,18 @@ public class BoatMove : MonoBehaviour
     }
 
     void MoveFisherman() {
-        Vector3 lineVector = transform.GetChild(0).position - transform.position;
-        rb.AddForceAtPosition(lineVector * lineStrength, transform.position, ForceMode2D.Force);
+        // Vector3 lineVector = transform.GetChild(0).position - transform.position;
+        // rb.AddForceAtPosition(lineVector * lineStrength, transform.position, ForceMode2D.Force);
         
-        if (lineVector.magnitude > lineLength) {
-            rb.MovePosition(transform.GetChild(0).position - (lineVector.normalized * lineLength));
-        }
-
-        // Vector2 lineVector = transform.GetChild(0).position - transform.position; 
         // if (lineVector.magnitude > lineLength) {
-        //     Vector2 idealSpot = lineVector.normalized * lineLength;
-        //     GetComponent<Rigidbody2D>().AddForceAtPosition(idealSpot * lineStrength, transform.position, ForceMode2D.Force);
+        //     rb.MovePosition(transform.GetChild(0).position - (lineVector.normalized * lineLength));
         // }
+
+        Vector2 lineVector = transform.GetChild(0).position - transform.position; 
+        if (lineVector.magnitude > lineLength) {
+            Vector2 idealSpot = lineVector.normalized * lineLength;
+            GetComponent<Rigidbody2D>().AddForceAtPosition(idealSpot * lineStrength, transform.position, ForceMode2D.Force);
+        }
     }
 
     public void SetAttached(bool attatchStatus) {
