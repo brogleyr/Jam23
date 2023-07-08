@@ -28,7 +28,7 @@ public class Line : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.name == "Fish") {
             attached = true;
-            GetComponent<SpriteRenderer>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(false);
             transform.parent.gameObject.GetComponent<Fisherman>().SetAttached(true);
         }
     }
