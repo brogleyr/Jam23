@@ -10,6 +10,7 @@ public class HP : MonoBehaviour
     SpriteRenderer m_SpriteRenderer;
     public Color OG_Color;
     public Color Hurt_Color;
+    private ScoreManager scoreManager;
 
     void Start()
     {
@@ -17,6 +18,8 @@ public class HP : MonoBehaviour
         m_SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         //Set the GameObject's Color quickly to a set Color (blue)
         OG_Color = m_SpriteRenderer.color;
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        
         
     }
 
@@ -30,6 +33,10 @@ public class HP : MonoBehaviour
         if (Health <= 0)
         {
             Die();
+        }
+
+        if (name == "Fish") {
+            scoreManager.ComboBreak();
         }
     }
 

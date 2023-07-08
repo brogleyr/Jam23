@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         if (comboCooldown <= 0) {
-            combo = 0;
+            ComboBreak();
             comboCooldown = comboCoolDownStart;
         }
         comboCooldown -= Time.deltaTime;
@@ -36,7 +36,10 @@ public class ScoreManager : MonoBehaviour
     private void ComboUp() {
         combo++;
         comboCooldown = comboCoolDownStart;
+    }
 
+    public void ComboBreak() {
+        combo = 0;
     }
 
     // public void OnTheLine() {
