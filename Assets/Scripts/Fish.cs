@@ -8,7 +8,7 @@ public class Fish : MonoBehaviour
 
     public Rigidbody2D rb;
     public float turnSpeed;
-    private float moveSpeed;
+    public float moveSpeed;
     public float baseMoveSpeed;
     public float speedGrowthFactor = 1;
     public float topSpeed = 50f;
@@ -46,6 +46,6 @@ public class Fish : MonoBehaviour
         Vector3 targetRotation = new Vector3(0, 0, angle);
         rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), turnSpeed * Time.deltaTime));
         rb.MovePosition(rb.position + ((Vector2)transform.right * moveSpeed * Time.deltaTime));
-        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+        //Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
     }
 }
