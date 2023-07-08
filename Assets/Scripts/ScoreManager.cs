@@ -6,8 +6,8 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
 
-    public TextMeshProUGUI comboUI;
-    public TextMeshProUGUI scoreUI;
+    private TextMeshProUGUI comboUI;
+    private TextMeshProUGUI scoreUI;
     
     private int score = 0;
     private int combo = 0;
@@ -17,6 +17,11 @@ public class ScoreManager : MonoBehaviour
     private float maxComboFontSize = 42;
     private float minComboFontSize = 18;
 
+    void Start() {
+        comboUI = GameObject.Find("ComboCounter").GetComponent<TextMeshProUGUI>();
+        scoreUI = GameObject.Find("ScoreCounter").GetComponent<TextMeshProUGUI>();
+    }
+    
     // Update is called once per frame
     void Update()
     {
