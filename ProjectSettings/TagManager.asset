@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rock
+  - Boat
+  - Fish
   layers:
   - Default
   - TransparentFX
@@ -41,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fish
+    uniqueID: 1543865323
+    locked: 0
+  - name: Surface
+    uniqueID: 194123553
     locked: 0
