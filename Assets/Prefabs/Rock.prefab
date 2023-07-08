@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4961503969901857877}
   m_Layer: 7
   m_Name: Rock
-  m_TagString: Fish
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

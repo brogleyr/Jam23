@@ -11,6 +11,7 @@ public class BoatMove : MonoBehaviour
     private Vector2 centerOfMass = new Vector2(-1.5f, 0);
     private Rigidbody2D rb;
     private Animator animator;
+    private ScoreManager scoreManager;
     
     // Start is called before the first frame update
     void Start()
@@ -18,9 +19,9 @@ public class BoatMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = transform.GetChild(1).gameObject.GetComponent<Animator>();
         float lineAngle = Random.Range(0, Mathf.PI);
-        Vector3 lineStartPosition = new Vector3(Mathf.Sin(lineAngle)*lineLength, Mathf.Cos(lineAngle)*lineLength, 0);
+        Vector3 lineStartPosition = new Vector3(Mathf.Sin(lineAngle)*(lineLength - 1), Mathf.Cos(lineAngle)*lineLength, 0);
         transform.GetChild(0).position = transform.TransformPoint(lineStartPosition);
-        //rb.centerOfMass = centerOfMass;
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class BoatMove : MonoBehaviour
             lineLength -= reelSpeed;
             if (lineLength <= 0) {
                 Debug.Log("NOOO");
+                scoreManager.OffTheLine();
                 Destroy(gameObject); // TODO make something happen 
             }
         }
@@ -37,28 +39,23 @@ public class BoatMove : MonoBehaviour
 
     private void FixedUpdate() {
         if (attached) {
-            MoveFisherman();
+            PullBoatByLine();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Rock") {
-            GameManager manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-            manager.BoatCrash();
-            Destroy(transform.GetChild(0).gameObject);
-            attached = false;
-            animator.SetTrigger("BoatDestroyed");
+            if (attached) {
+                Destroy(transform.GetChild(0).gameObject);
+                attached = false;
+                scoreManager.BoatCrash(transform);
+                animator.SetTrigger("BoatDestroyed");
+            }
             Destroy(gameObject, 1f);
         }
     }
 
-    void MoveFisherman() {
-        // Vector3 lineVector = transform.GetChild(0).position - transform.position;
-        // rb.AddForceAtPosition(lineVector * lineStrength, transform.position, ForceMode2D.Force);
-        
-        // if (lineVector.magnitude > lineLength) {
-        //     rb.MovePosition(transform.GetChild(0).position - (lineVector.normalized * lineLength));
-        // }
+    void PullBoatByLine() {
 
         Vector2 lineVector = transform.GetChild(0).position - transform.position; 
         if (lineVector.magnitude > lineLength) {
@@ -71,5 +68,9 @@ public class BoatMove : MonoBehaviour
     public void SetAttached(bool attatchStatus) {
         attached = attatchStatus;
         animator.SetBool("BoatAttached", true);
+    }
+
+    public bool GetAttached() {
+        return attached;
     }
 }

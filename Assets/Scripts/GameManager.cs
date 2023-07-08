@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int score = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -16,10 +15,5 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void BoatCrash() {
-        score++;
-        Debug.Log("Score: " + score);
     }
 }

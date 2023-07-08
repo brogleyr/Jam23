@@ -7,6 +7,7 @@ public class Line : MonoBehaviour
     
     public LineRenderer lineRenderer;
     private bool attached = false;
+    private ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,8 @@ public class Line : MonoBehaviour
         lineRenderer.sortingOrder = 1;
         lineRenderer.material = new Material (Shader.Find ("Sprites/Default"));
         lineRenderer.material.color = Color.black;
+
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class Line : MonoBehaviour
             attached = true;
             transform.GetChild(0).gameObject.SetActive(false);
             transform.parent.gameObject.GetComponent<BoatMove>().SetAttached(true);
+            scoreManager.OnTheLine();
         }
     }
 }

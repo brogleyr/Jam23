@@ -52,21 +52,19 @@ public class SpawnerScript : MonoBehaviour
         }
 
         while (CurrentRocks < MaxRocks) {
-            if (spawnObject(rock, closeRockDistance, farRockDistance)) {
-            }
+            spawnObject(rock, closeRockDistance, farRockDistance, spawnRadiusRock);
             CurrentRocks++;
         }
         //UnityEngine.Debug.Log("Current spawn time: " + spawnTime);
         while (CurrentBoats < MaxBoats) {
-            if (spawnObject(boat, closeBoatDistance, farBoatDistance)) {
-            };
+            spawnObject(boat, closeBoatDistance, farBoatDistance, spawnRadiusBoat);
             CurrentBoats++;
         }
 
         
     }
 
-    bool spawnObject(GameObject prefab, float minDistance, float maxDistance)
+    bool spawnObject(GameObject prefab, float minDistance, float maxDistance, float spawnRadius)
     {
         float spawnAngle = Random.Range(0, 2.0f * Mathf.PI);
         float spawnDistance = Random.Range(minDistance, maxDistance);
@@ -74,7 +72,7 @@ public class SpawnerScript : MonoBehaviour
         Vector3 spawnPosition = fishTransform.position + spawnPositionFishSpace;
         Vector3 spawnRotation = new Vector3(0, 0, Random.Range(-180, 180));
 
-        Collider2D spawnCollision = Physics2D.OverlapCircle(spawnPosition, spawnRadiusRock);
+        Collider2D spawnCollision = Physics2D.OverlapCircle(spawnPosition, spawnRadius);
         if (spawnCollision == null)
         {
             Instantiate(prefab, spawnPosition, Quaternion.Euler(spawnRotation));

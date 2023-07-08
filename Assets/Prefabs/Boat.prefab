@@ -554,4 +554,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   despawnCounter: 60
-  despawnDistance: 150
+  despawnDistance: 100
