@@ -20,6 +20,13 @@ public class FishingBoatPull : MonoBehaviour
         animator = transform.GetChild(1).gameObject.GetComponent<Animator>();
         float lineAngle = Random.Range(0, Mathf.PI);
         Vector3 lineStartPosition = new Vector3(Mathf.Sin(lineAngle)*(lineLength - 1), Mathf.Cos(lineAngle)*lineLength, 0);
+
+        Collider2D lineSpawnCollision = Physics2D.OverlapCircle(lineStartPosition, 1);
+        if (lineSpawnCollision != null && lineSpawnCollision.tag == "Rock") {
+            lineAngle += Mathf.PI;
+            lineStartPosition = new Vector3(Mathf.Sin(lineAngle)*(lineLength - 1), Mathf.Cos(lineAngle)*lineLength, 0);
+        }
+
         transform.GetChild(0).position = transform.TransformPoint(lineStartPosition);
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
