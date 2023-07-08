@@ -4,29 +4,24 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    public Transform firepoint;
-    public GameObject bulletprefab;
-
+    //The barrel of the gun
+    private Transform firePoint;
+    //The type of bullet fired
+    public GameObject bulletPrefab;
+    public float rateOfFire = 1;
     // Start is called before the first frame update
     void Start()
     {
-        firepoint = this.transform.GetChild(0).transform;
+        //Find the barrel of your gun assuming its the first child object
+        firePoint = this.transform.GetChild(0).transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    //Shooting bullet logic
+    public void Shoot()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            Shoot();
-        }
-
-    }
-
-    //shooting bullet logic
-    void Shoot()
-    {
-        Instantiate(bulletprefab, firepoint.position, firepoint.rotation);
+        //Spawn Bullet
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        //If object has a bullet firing animation find it and play it
     }
 
 }
