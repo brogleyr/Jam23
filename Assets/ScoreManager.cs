@@ -14,6 +14,8 @@ public class ScoreManager : MonoBehaviour
     private int onTheLine = 0;
     private float comboCoolDownStart = 5;
     private float comboCooldown = 5; //seconds
+    private float maxComboFontSize = 42;
+    private float minComboFontSize = 18;
 
     // Update is called once per frame
     void Update()
@@ -21,15 +23,15 @@ public class ScoreManager : MonoBehaviour
         if (comboCooldown <= 0) {
             combo = 0;
             comboCooldown = comboCoolDownStart;
-            UpdateUI();
         }
-        
         comboCooldown -= Time.deltaTime;
+        UpdateUI();
     }
 
     private void ComboUp() {
         combo++;
         comboCooldown = comboCoolDownStart;
+
     }
 
     public void OnTheLine() {
@@ -52,11 +54,21 @@ public class ScoreManager : MonoBehaviour
         }
         score += combo * onTheLine;
         OffTheLine();
-        UpdateUI();
     }
 
     private void UpdateUI() {
+        float comboCooldownPercent = Mathf.InverseLerp(0, comboCoolDownStart, comboCooldown);
+        if (combo == 0) {
+            comboUI.fontSize = minComboFontSize;
+        }
+        else {
+            comboUI.fontSize = Mathf.Lerp(minComboFontSize, maxComboFontSize, comboCooldownPercent);
+        }
         comboUI.text = "COMBO:\nx" + combo.ToString();
         scoreUI.text = score.ToString();
+    }
+
+    public int GetCombo() {
+        return combo;
     }
 }

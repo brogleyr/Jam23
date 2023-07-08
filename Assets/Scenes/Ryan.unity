@@ -1414,6 +1414,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4027805352788730062, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: baseMoveSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9009149379872600151, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
       propertyPath: m_Name
       value: Fish
@@ -1821,7 +1825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821628254220201854, guid: 6975d00da17823540b7b9e91b65352f2, type: 3}
       propertyPath: farRockDistance
-      value: 800
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4821628254220201854, guid: 6975d00da17823540b7b9e91b65352f2, type: 3}
       propertyPath: spawnRadiusBoat

@@ -7,10 +7,27 @@ public class Fish : MonoBehaviour
 {
 
     public Rigidbody2D rb;
-    public float turnSpeed = 1000;
-    public float moveSpeed = 4;
+    public float turnSpeed;
+    private float moveSpeed;
+    public float baseMoveSpeed;
+    public float speedGrowthFactor = 1;
+    public float topSpeed = 50f;
+    public float baseScale = 1;
+    public float scaleGrowthFactor = 0.06f;
+    public float topScale = 5;
+    
+    private ScoreManager scoreManager;
+
+    void Start() {
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
+    
     void FixedUpdate()
     {
+        moveSpeed = Mathf.Min(baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo()), topSpeed);
+        float newScale = Mathf.Min(baseScale + (scaleGrowthFactor * scoreManager.GetCombo()), topScale);
+        transform.localScale = new Vector3(newScale, newScale, newScale);
+
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePosition - transform.position;
         float angle = Vector2.SignedAngle(Vector2.right, direction);
