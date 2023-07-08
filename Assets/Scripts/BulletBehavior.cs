@@ -8,7 +8,7 @@ public class BulletBehavior : MonoBehaviour
     public float speed = 20;
     Rigidbody2D rb;
     public int damage = 5;
-    private int hp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +29,7 @@ public class BulletBehavior : MonoBehaviour
         }
         else if(other.gameObject.tag == "Fish")
         {
-            other.gameObject.GetComponent<HP>().Health = other.gameObject.GetComponent<HP>().Health - damage;
+            other.gameObject.GetComponent<HP>().TakeDamage(damage);
             Destroy(gameObject);
         }
             

@@ -8,6 +8,7 @@ TagManager:
   - Boat
   - Fish
   - Bullet
+  - Mouth
   layers:
   - Default
   - TransparentFX

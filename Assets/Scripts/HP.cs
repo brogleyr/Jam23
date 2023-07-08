@@ -35,14 +35,21 @@ public class HP : MonoBehaviour
 
     IEnumerator Ouch()
     {
+
         m_SpriteRenderer.color = Hurt_Color;
+
         yield return new WaitForSeconds(1);
+        
         m_SpriteRenderer.color = OG_Color;
 
     }
     void Die ()
     {
+        //death animation
+
+        //destroy
         Destroy(gameObject);
+        
     }
     
     // Update is called once per frame
