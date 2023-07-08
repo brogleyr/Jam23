@@ -11,6 +11,8 @@ public class SpawnerScript : MonoBehaviour
     //Object to spawn
     public GameObject rock;
     public GameObject boat;
+    public GameObject whalingboat;
+    public GameObject navyboat;
 
     //Spawn Boundries
     public float closeRockDistance;
@@ -58,6 +60,20 @@ public class SpawnerScript : MonoBehaviour
         //UnityEngine.Debug.Log("Current spawn time: " + spawnTime);
         while (CurrentBoats < MaxBoats) {
             spawnObject(boat, closeBoatDistance, farBoatDistance, spawnRadiusBoat);
+            CurrentBoats++;
+            int rand = Random.Range(1, 200);
+            if (rand <= 150)
+            {
+                spawnObject(boat, closeBoatDistance, farBoatDistance, spawnRadiusBoat);
+            }
+            else if (rand > 150 && rand <= 175)
+            {
+                spawnObject(whalingboat, closeBoatDistance, farBoatDistance, spawnRadiusBoat);
+            }
+            else if (rand > 175 && rand <= 200)
+            {
+                spawnObject(navyboat, closeBoatDistance, farBoatDistance, spawnRadiusBoat);
+            }
             CurrentBoats++;
         }
 
