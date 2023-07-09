@@ -28,6 +28,7 @@ public class HP : MonoBehaviour
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         Health = maxHealth;
+        healthBar = GameObject.Find("Health").GetComponent<Renderer>();
     }
 
     private void Update() {

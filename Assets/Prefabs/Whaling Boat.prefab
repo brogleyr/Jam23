@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 1395545243377644304}
   - component: {fileID: 9043847601790605227}
   - component: {fileID: 3652738863805945567}
+  - component: {fileID: 3417073053435603672}
   m_Layer: 6
   m_Name: Whaling Boat
   m_TagString: HostileBoat
@@ -462,6 +463,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 415860640455210954}
   boatSfx: {fileID: 0}
+--- !u!114 &3417073053435603672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960379855402550709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1f1a5d5626cd84f9186641adaf5a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnCounter: 60
+  despawnDistance: 800
 --- !u!1 &8594749944763318870
 GameObject:
   m_ObjectHideFlags: 0

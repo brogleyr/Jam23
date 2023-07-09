@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7513149706328249874}
-  turnSpeed: 760
+  turnSpeed: 600
   moveSpeed: 0
   baseMoveSpeed: 20
   speedGrowthFactor: 1
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766be1077d275db40af74abff0bf78e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 165
+  Health: 100
   maxHealth: 100
   OG_Color: {r: 0, g: 0.4, b: 0.6, a: 0}
   Hurt_Color: {r: 1, g: 0.2783019, b: 0.2783019, a: 0}

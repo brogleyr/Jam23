@@ -14,13 +14,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI finalTime;
     private Animator transcendAnimator;
     private bool transcended = false;
-    private Fish m_fish;
     public TextMeshProUGUI gameOverReasonText;
     public TextMeshProUGUI gameOverText;
     // Start is called before the first frame update
     void Start()
     {
-        m_fish = GameObject.Find("Fish").GetComponent<Fish>();
         gameOverReasonText.SetText("");
         gameOverText.SetText("");
         timer = 0f;
@@ -48,7 +46,7 @@ public class GameManager : MonoBehaviour
     public void GameOver(string GameOverReason)
     {
         gameIsOver = true;
-        m_fish.moveSpeed = 0;
+        GameObject.Find("Fish").GetComponent<Fish>().moveSpeed = 0;
         gameOverReasonText.SetText(GameOverReason);
         if (transcended == true)
             gameOverText.SetText("Congrats");
@@ -57,5 +55,12 @@ public class GameManager : MonoBehaviour
 
         m_playAgain.SetActive(true);
 
+    }
+
+    public void ResetGame() {
+        gameOverReasonText.SetText("");
+        gameOverText.SetText("");
+        m_playAgain.SetActive(false);
+        gameIsOver = false;
     }
 }

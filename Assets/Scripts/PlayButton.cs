@@ -12,6 +12,7 @@ public class PlayButton : MonoBehaviour
     }
     public void ResetGame()
     {
+        GameObject.Find("GameManager").GetComponent<GameManager>().ResetGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
