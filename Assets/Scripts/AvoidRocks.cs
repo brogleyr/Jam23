@@ -14,7 +14,6 @@ public class AvoidRocks : MonoBehaviour
         timer += Time.deltaTime;
         if (collision.CompareTag("Rock") || collision.CompareTag("Boat"))
         {
-            Debug.Log("Navy Ship Saw " + collision.gameObject.name);
             Turn();
         }
     }
