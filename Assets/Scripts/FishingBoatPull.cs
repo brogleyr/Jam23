@@ -67,8 +67,7 @@ public class FishingBoatPull : MonoBehaviour
         Vector2 lineVector = transform.GetChild(0).position - transform.position; 
         if (lineVector.magnitude > lineLength) {
             Vector2 idealSpot = lineVector.normalized * lineLength;
-            float distToIdealSpot = Vector2.Distance(idealSpot, transform.position);
-            GetComponent<Rigidbody2D>().AddForceAtPosition(idealSpot.normalized * distToIdealSpot * lineStrength, transform.position, ForceMode2D.Force);
+            GetComponent<Rigidbody2D>().AddForceAtPosition(idealSpot * lineStrength, transform.position, ForceMode2D.Force);
         }
     }
 
