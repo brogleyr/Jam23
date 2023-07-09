@@ -9,7 +9,6 @@ public class PlayButton : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(gotoScene);
-        //SceneManager.LoadScene("Nick");
     }
     public void ResetGame()
     {
