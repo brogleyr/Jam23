@@ -48,7 +48,7 @@ public class HP : MonoBehaviour
                 m_gameManager.GameOver("You were killed by " + killer);
 
             }
-            scoreManager.ComboBreak();
+            //scoreManager.ComboBreak();
         }
     }
 

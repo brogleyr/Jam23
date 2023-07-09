@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishingBoatPull : MonoBehaviour
 {
     public float lineLength;
+    public float minLineLength;
     public float lineStrength;
     public float reelSpeed;
     private bool attached = false;
@@ -35,13 +36,8 @@ public class FishingBoatPull : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attached) {
+        if (attached && lineLength > minLineLength) {
             lineLength -= reelSpeed;
-            if (lineLength <= 0) {
-                Debug.Log("NOOO");
-                //scoreManager.OffTheLine();
-                Destroy(gameObject); // TODO make something happen 
-            }
         }
     }
 

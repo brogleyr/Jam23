@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineLength: 15
+  minLineLength: 3
   lineStrength: 200
   reelSpeed: 0.001
 --- !u!95 &2899655499308320320

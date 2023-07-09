@@ -10,12 +10,12 @@ public class Fish : MonoBehaviour
     public float turnSpeed;
     public float moveSpeed;
     public float baseMoveSpeed;
-    public float speedGrowthFactor = 1;
+    public float speedGrowthFactor = 0.6f;
     public float topSpeed = 50f;
     public float boundingSpeed = 500f;
-    public float baseScale = 1;
-    public float scaleGrowthFactor = 0.06f;
-    public float topScale = 5;
+    public float baseScale = 1f;
+    public float scaleGrowthFactor = 0.05f;
+    public float topScale = 5f;
     
     private ScoreManager scoreManager;
     private GameManager gameManager;
