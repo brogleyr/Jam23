@@ -24,9 +24,9 @@ public class PlayerFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        cam.orthographicSize = zoom + ((target.GetComponent<Fish>().moveSpeed * zoomToSpeedRatio) * (1 * zoomToSpeedRatio));
+        cam.orthographicSize = zoom + ((target.GetComponent<Fish>().moveSpeed * zoomToSpeedRatio) * (1 * zoomToSpeedRatio)- 5);
         Vector3 desiredPosition = target.transform.GetChild(2).position + offset;
         Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = smoothPosition;
+        transform.position = desiredPosition;
     }
 }

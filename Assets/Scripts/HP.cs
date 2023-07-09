@@ -45,7 +45,7 @@ public class HP : MonoBehaviour
             if (Health <= 0)
             {
                 m_fish.Disable(true);
-                m_gameManager.GameOver("Game Over \n you were killed by" + killer);
+                m_gameManager.GameOver("You were killed by " + killer);
 
             }
             scoreManager.ComboBreak();

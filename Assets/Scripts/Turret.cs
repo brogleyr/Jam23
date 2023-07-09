@@ -37,7 +37,11 @@ public class Turret : MonoBehaviour
         yield return new WaitForSeconds(1 / shooter.rateOfFire);
         shooter.Shoot();
         isShooting = false;
-        animator.SetBool("IsShooting", false);
+        if (animator != null)
+        {
+            animator.SetBool("IsShooting", false);
+        }
+        
 
     }
 
