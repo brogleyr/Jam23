@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,9 +13,12 @@ public class GameManager : MonoBehaviour
     private Animator transcendAnimator;
     private bool transcended = false;
     private Fish m_fish;
+    public TextMeshProUGUI gameOverText;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameOverText.SetText("");
         timer = 0f;
         transcendAnimator = GameObject.Find("CameraFadeAlpha").GetComponent<Animator>();
     }
@@ -38,9 +42,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(string GameOverReason)
     {
-
         gameIsOver = true;
         m_fish.moveSpeed = 0;
-
+        gameOverText.SetText("Game Over " + GameOverReason);
+        // SceneManager.LoadScene("StartScene");
     }
 }

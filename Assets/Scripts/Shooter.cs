@@ -21,7 +21,7 @@ public class Shooter : MonoBehaviour
     //Shooting bullet logic
     public void Shoot()
     {
-        if (m_gameManager.gameIsOver!)
+        if (m_gameManager.gameIsOver == false)
         {
             //Spawn Bullet
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
