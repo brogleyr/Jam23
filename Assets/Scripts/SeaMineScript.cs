@@ -6,6 +6,7 @@ public class SeaMineScript : MonoBehaviour
 {
     public int damage = 20;
     private Animator m_animator;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,7 @@ public class SeaMineScript : MonoBehaviour
         //Start countdown until mine despwans
         StartCoroutine(Lifetime());
         m_animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
     }
     //Despawn after 15 seconds if doesn't hit anything
@@ -37,6 +39,7 @@ public class SeaMineScript : MonoBehaviour
     private void Boom()
     {
         m_animator.SetTrigger("MineTrigger");
+        audioSource.Play();
         Destroy(this.gameObject, 0.5f);
     }
 }
