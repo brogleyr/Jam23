@@ -22,27 +22,30 @@ public class Turret : MonoBehaviour
     public float rotationModifier = 45;
     // Start is called before the first frame update
     public Animator animator;
+
+    private GameManager gameManager;
+
     void Start()
     {
         m_CirlceCollider2D = GetComponent<CircleCollider2D>();
         m_camera = GameObject.Find("Main Camera").GetComponent<Camera>();
         shooter = GetComponent<Shooter>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     IEnumerator FireContinuously()
     {
         isShooting = true;
 
-        animator.SetBool("IsShooting", true);
+        if (animator != null) {
+            animator.SetBool("IsShooting", true);
+        }
         yield return new WaitForSeconds(1 / shooter.rateOfFire);
         shooter.Shoot();
         isShooting = false;
-        if (animator != null)
-        {
+        if (animator != null) {
             animator.SetBool("IsShooting", false);
         }
-        
-
     }
 
      void OnTriggerEnter2D(Collider2D other)
@@ -72,13 +75,19 @@ public class Turret : MonoBehaviour
         {
             Rotate(target);
         }
-            
+        
+        if (gameManager.gameIsOver) {
+            isShooting = false;
+        }
+
         m_CirlceCollider2D.radius = m_camera.orthographicSize;
         while (seeEnemy && !isShooting)
         {
             StartCoroutine(FireContinuously());
         }
     }
+
+
     void Rotate(Transform target)
     {
         {

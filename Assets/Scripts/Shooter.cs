@@ -21,7 +21,7 @@ public class Shooter : MonoBehaviour
     //Shooting bullet logic
     public void Shoot()
     {
-        if (m_gameManager.gameIsOver == false)
+        if (m_gameManager.gameIsOver == false && firePoint != null)
         {
             //Spawn Bullet
             if (firePoint != null)

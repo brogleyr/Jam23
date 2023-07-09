@@ -51,7 +51,6 @@ public class FishingBoatPull : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "Rock" && attached) {
             Destroy(transform.GetChild(0).gameObject);
             attached = false;
