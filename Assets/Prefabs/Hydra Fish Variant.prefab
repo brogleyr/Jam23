@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5099995385766400566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -681525278861008100, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: Health
+      value: 165
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777394654745698278, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3db9d3b4577738740abee4f5be0d7b85, type: 3}
+    - target: {fileID: 1777394654745698278, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777394654745698278, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777394654745698278, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974222748579442693, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.916
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.169
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027805352788730062, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: topSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027805352788730062, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027805352788730062, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: turnSpeed
+      value: 760
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512217961343229274, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4512217961343229274, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490418521262309914, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513149706328249874, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9009149379872600151, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: m_Name
+      value: Hydra Fish Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
