@@ -22,6 +22,7 @@ public class Shooter : MonoBehaviour
         //Spawn Bullet
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         //If object has a bullet firing animation find it and play it
+        //play animation :)
     }
 
 }

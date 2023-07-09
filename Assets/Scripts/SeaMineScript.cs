@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class SeaMineScript : MonoBehaviour
 {
-    public int damage = 0;
+    public int damage = 100;
     // Start is called before the first frame update
     void Start()
     {
+        Vector3 spawnRotation = new Vector3(0, 0, Random.Range(-180, 180));
+        Vector3 spawnPosition = transform.position + (transform.right * -3);
         //Start countdown until mine despwans
         StartCoroutine(Lifetime());
 
