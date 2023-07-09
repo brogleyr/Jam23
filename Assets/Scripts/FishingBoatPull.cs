@@ -61,7 +61,12 @@ public class FishingBoatPull : MonoBehaviour
         if (other.gameObject.tag == "HostileBoat" && attached) {
             Destroy(transform.GetChild(0).gameObject);
             attached = false;
-            other.gameObject.GetComponent<Scuttle>().ScuttleBoat();
+            if (other.gameObject.GetComponent<Scuttle>() != null) {
+                other.gameObject.GetComponent<Scuttle>().ScuttleBoat();
+            }
+            else {
+                other.transform.parent.GetComponent<Scuttle>().ScuttleBoat();
+            }
             GetComponent<Scuttle>().ScuttleBoat();
         }
     }

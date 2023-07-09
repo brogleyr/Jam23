@@ -16,9 +16,15 @@ public class Scuttle : MonoBehaviour
 
 
     public void ScuttleBoat() {
-        Debug.Log("Scuttling");
         scoreManager.BoatCrash(transform);
         animator.SetTrigger("BoatDestroyed");
+
+        foreach (Transform child in transform) {
+            if (child.name != "Sprite") {
+                Destroy(child.gameObject);
+            } 
+        }
+
         Destroy(gameObject, 1f);
     }
 }
