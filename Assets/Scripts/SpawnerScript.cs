@@ -101,8 +101,4 @@ public class SpawnerScript : MonoBehaviour
         }
         return false;
     }
-    void spawnWater()
-    {
-        Instantiate(prefab, spawnPosition, Quaternion.Euler(spawnRotation));
-    }
 }
