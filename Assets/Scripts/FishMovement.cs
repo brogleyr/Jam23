@@ -10,7 +10,9 @@ public class FishMovement : MonoBehaviour
     public float moveSpeed = 15;
     public float angleX;
     public float angleY;
-    private Vector2 _movementInput;
+    private Vector3 mousePos;
+    private Vector3 worldPosition;
+    private Vector3 target;
     public Rigidbody2D rb;
 
 
@@ -21,15 +23,24 @@ public class FishMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    /*
-    private void OnMove(InputValue movementValue)
+    
+    private void Update()
     {
-        Vector2 movementVector = movementValue.Get<Vector2>();
+        /*
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        angleX = Mouse.current.position.ReadValue().x;
+        angleY = Mouse.current.position.ReadValue().y;
 
-        movementX = movementVector.x;
-        movementY = movementVector.y;
+        Vector3 target = (angleX, angleY, 0);
+        transform.LookAt(target);
+        */
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
+        transform.LookAt(worldPosition);
+
     }
-    */
+    
     private void FixedUpdate()
     {
 

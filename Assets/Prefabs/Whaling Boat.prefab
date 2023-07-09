@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4061301206848830388}
   - component: {fileID: 1296593857734117895}
+  - component: {fileID: 764612892015238696}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!95 &764612892015238696
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423794396310768730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89f1c9c66d19fa84eb15406cb3462a77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3002938586971509094
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,37 +254,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!1 &5627653921190780176
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2711446190727738367}
-  m_Layer: 6
-  m_Name: Turret
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2711446190727738367
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5627653921190780176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5318221586018109947}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6960379855402550709
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +264,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5318221586018109947}
   - component: {fileID: 6397072367051114966}
-  - component: {fileID: 1859158671941079103}
   - component: {fileID: 6956890086654761137}
   - component: {fileID: 1395545243377644304}
   - component: {fileID: 9043847601790605227}
@@ -297,7 +287,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5467266225084990465}
-  - {fileID: 2711446190727738367}
   - {fileID: 7797167044011706286}
   - {fileID: 6872145675911784158}
   m_Father: {fileID: 0}
@@ -355,20 +344,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1859158671941079103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6960379855402550709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ad91a9d7718224b9acaa4b771a272f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8428759746927383456, guid: 47bb55154cd89794288b613aced47a81, type: 3}
-  rateOfFire: 1
 --- !u!114 &6956890086654761137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 1
   rotationModifier: 45
+  animator: {fileID: 764612892015238696}
 --- !u!1 &8594749944763318870
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,7 @@ public class Turret : MonoBehaviour
     //Alligns assets incase their roation is off
     public float rotationModifier = 45;
     // Start is called before the first frame update
+    public Animator animator;
     void Start()
     {
         m_CirlceCollider2D = GetComponent<CircleCollider2D>();
@@ -31,9 +32,13 @@ public class Turret : MonoBehaviour
     IEnumerator FireContinuously()
     {
         isShooting = true;
+
+        animator.SetBool("IsShooting", true);
         yield return new WaitForSeconds(1 / shooter.rateOfFire);
         shooter.Shoot();
         isShooting = false;
+        animator.SetBool("IsShooting", false);
+
     }
 
      void OnTriggerEnter2D(Collider2D other)
