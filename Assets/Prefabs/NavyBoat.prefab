@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8859389405347425897}
+  - component: {fileID: 5806620424455215367}
   m_Layer: 6
   m_Name: Fire Point
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 2289305137983543686}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5806620424455215367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2162200293652350672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3af5244f5212f48834d95b96f22e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeBtwSpawns: 0.4
+  wave: {fileID: 3087547094312639640, guid: cf2da70aecbe413418f0488a3ecea4fa, type: 3}
 --- !u!1 &2899050792599157189
 GameObject:
   m_ObjectHideFlags: 0
