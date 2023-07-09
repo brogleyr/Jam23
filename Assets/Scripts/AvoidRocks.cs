@@ -28,6 +28,8 @@ public class AvoidRocks : MonoBehaviour
             }
             else dir = -1;
         }
-        transform.parent.Rotate(Vector3.forward * 50 * dir * Time.deltaTime);
+        if (transform.parent != null) {
+            transform.parent.Rotate(Vector3.forward * 50 * dir * Time.deltaTime);
+        }
     }
 }
