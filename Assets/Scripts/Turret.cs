@@ -37,7 +37,7 @@ public class Turret : MonoBehaviour
     {
         isShooting = true;
 
-        if (animator != null)
+        if (animator != null && gameManager.gameIsOver == false)
         {
             animator.SetTrigger("Shoot");
         }

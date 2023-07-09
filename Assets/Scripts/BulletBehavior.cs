@@ -40,6 +40,7 @@ public class BulletBehavior : MonoBehaviour
         else if(other.gameObject.CompareTag("Fish"))
         {
             other.gameObject.GetComponent<HP>().TakeDamage(damage,"A Whaler's Harpoon");
+            
             Destroy(this.gameObject);
         }
             

@@ -31,6 +31,7 @@ public class FishingBoatPull : MonoBehaviour
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -44,11 +45,13 @@ public class FishingBoatPull : MonoBehaviour
         }
     }
 
+
     private void FixedUpdate() {
         if (attached) {
             PullBoatByLine();
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Rock" && attached) {
@@ -70,6 +73,7 @@ public class FishingBoatPull : MonoBehaviour
         }
     }
 
+
     void PullBoatByLine() {
 
         Vector2 lineVector = transform.GetChild(0).position - transform.position; 
@@ -79,7 +83,9 @@ public class FishingBoatPull : MonoBehaviour
         }
     }
 
-    public void SetAttached(bool attatchStatus) {
+
+    public void SetAttached(bool attatchStatus) 
+    {
         attached = attatchStatus;
         animator.SetBool("BoatAttached", true);
     }
