@@ -64,8 +64,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.54, y: 0}
-  m_Size: {x: 2.86, y: 2.89}
+  m_Offset: {x: -0.89, y: 0}
+  m_Size: {x: 1.55, y: 1.31}
   m_Direction: 1
 --- !u!1 &5038503492031869805
 GameObject:
@@ -195,7 +195,6 @@ GameObject:
   - component: {fileID: 959744041959367340}
   - component: {fileID: 4027805352788730062}
   - component: {fileID: -681525278861008100}
-  - component: {fileID: 2002483660094685361}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Fish
@@ -280,9 +279,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_Offset: {x: -1.62, y: 0}
+  m_Size: {x: 2.85, y: 0.85}
+  m_Direction: 1
 --- !u!114 &4027805352788730062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,33 +319,3 @@ MonoBehaviour:
   Health: 100
   OG_Color: {r: 0, g: 0.4, b: 0.6, a: 0}
   Hurt_Color: {r: 1, g: 0.2783019, b: 0.2783019, a: 0}
---- !u!114 &2002483660094685361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9009149379872600151}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 737e8f4d2977b6f4190ab280a3359061, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Gameplay
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}

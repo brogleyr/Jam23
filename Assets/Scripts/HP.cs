@@ -5,7 +5,8 @@ using UnityEngine;
 public class HP : MonoBehaviour
 {
     //total HP
-    public int Health = 100;
+    public int Health;
+    public int maxHealth = 100;
 
     SpriteRenderer m_SpriteRenderer;
     public Color OG_Color;
@@ -15,6 +16,8 @@ public class HP : MonoBehaviour
     Animator animator;
     Scuttle m_scuttle;
     private Fish m_fish;
+    public Renderer healthBar;
+
     void Start()
     {
         m_fish = GetComponent<Fish>();
@@ -24,8 +27,14 @@ public class HP : MonoBehaviour
         OG_Color = m_SpriteRenderer.color;
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        Health = maxHealth;
+    }
 
-
+    private void Update() {
+        if (healthBar != null) {
+            float healthRatio = (float)Health / (float)maxHealth;
+            healthBar.sharedMaterial.SetFloat("_Health", healthRatio);
+        }
     }
 
     //instantiate when you take damage

@@ -42,26 +42,18 @@ public class ScoreManager : MonoBehaviour
         combo = 0;
     }
 
-    // public void OnTheLine() {
-    //     onTheLine++;
-    // }
-
-    // public void OffTheLine() {
-    //     onTheLine--;
-    // }
-    
-
     public void BoatCrash(Transform crashedBoat) {
         ComboUp();
-        //onTheLine = 0;
-        // GameObject[] boats = GameObject.FindGameObjectsWithTag("Boat");
-        // foreach (GameObject boat in boats) {
-        //     if (boat.GetComponent<FishingBoatPull>().GetAttached()) {
-        //         onTheLine++;
-        //     }
-        // }
-        score += combo; //* onTheLine;
-        //OffTheLine();
+        int boatPoints = 100;
+        if (crashedBoat.gameObject.GetComponent<NavyBoat>() != null) {
+            boatPoints = 500;
+        }
+        else if (crashedBoat.gameObject.GetComponent<Turret>()) {
+            boatPoints = 200;
+        }
+
+
+        score += combo * boatPoints;
     }
 
     private void UpdateUI() {

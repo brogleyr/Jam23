@@ -29,7 +29,7 @@ public class Line : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.name == "Fish") {
+        if (other.gameObject.name == "Mouth") {
             attached = true;
             transform.GetChild(0).gameObject.SetActive(false);
             transform.parent.gameObject.GetComponent<FishingBoatPull>().SetAttached(true);

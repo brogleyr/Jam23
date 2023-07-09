@@ -428,6 +428,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+--- !u!23 &525431847 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4914098087771229743, guid: 9fe4f568e90fddd47b98e64c407d7b31, type: 3}
+  m_PrefabInstance: {fileID: 1219607801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &561200302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1170,18 +1175,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5817619308889916692, guid: 9fe4f568e90fddd47b98e64c407d7b31, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.85490197
-      objectReference: {fileID: 0}
-    - target: {fileID: 5817619308889916692, guid: 9fe4f568e90fddd47b98e64c407d7b31, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.5686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 5817619308889916692, guid: 9fe4f568e90fddd47b98e64c407d7b31, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6248889940432955415, guid: 9fe4f568e90fddd47b98e64c407d7b31, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -1268,6 +1261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -681525278861008100, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 525431847}
     - target: {fileID: 3670296351437154403, guid: 5c2f136a55161e2468f19187707e4a0d, type: 3}
       propertyPath: m_RootOrder
       value: 6
