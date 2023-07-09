@@ -37,9 +37,9 @@ public class SeaMineScript : MonoBehaviour
 
     }
     private void Boom()
-    {
+    {       
         m_animator.SetTrigger("MineTrigger");
         audioSource.Play();
-        Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject, 1.0f);
     }
 }
