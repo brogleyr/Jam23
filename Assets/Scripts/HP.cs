@@ -14,8 +14,10 @@ public class HP : MonoBehaviour
     GameManager m_gameManager;
     Animator animator;
     Scuttle m_scuttle;
+    private Fish m_fish;
     void Start()
     {
+        m_fish = GetComponent<Fish>();
         //Fetch the SpriteRenderer from the GameObject
         m_SpriteRenderer = GetComponentInChildren<SpriteRenderer>();
         //Set the GameObject's Color quickly to a set Color (blue)
@@ -27,13 +29,13 @@ public class HP : MonoBehaviour
     }
 
     //instantiate when you take damage
-    public void TakeDamage (int damage)
+    public void TakeDamage (int damage, string killer)
     {
         
         Health -= damage;
         StartCoroutine(Ouch());
        
-        if (Health <= 0)
+        if (Health <= 0 && !(name == "Fish"))
         {
             Die();
         }
@@ -42,7 +44,9 @@ public class HP : MonoBehaviour
         {
             if (Health <= 0)
             {
-                m_gameManager.GameOver("You Died");
+                m_fish.Disable(true);
+                m_gameManager.GameOver("Game Over \n you were killed by" + killer);
+
             }
             scoreManager.ComboBreak();
         }

@@ -36,19 +36,29 @@ public class Fish : MonoBehaviour
         //moveSpeed = Mathf.Min(baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo()), topSpeed);
         //float newScale = Mathf.Min(baseScale + (scaleGrowthFactor * scoreManager.GetCombo()), topScale);
         if (!gameManager.gameIsOver)
+        {
             moveSpeed = baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo());
 
-        float newScale = baseScale + (scaleGrowthFactor * scoreManager.GetCombo());
+            float newScale = baseScale + (scaleGrowthFactor * scoreManager.GetCombo());
 
-        transform.localScale = new Vector3(newScale, newScale, newScale);
+            transform.localScale = new Vector3(newScale, newScale, newScale);
 
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePosition - transform.position;
-        float angle = Vector2.SignedAngle(Vector2.right, direction);
-        Vector3 targetRotation = new Vector3(0, 0, angle);
-        rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), turnSpeed * Time.deltaTime));
-        rb.MovePosition(rb.position + ((Vector2)transform.right * moveSpeed * Time.deltaTime));
-        //Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direction = mousePosition - transform.position;
+            float angle = Vector2.SignedAngle(Vector2.right, direction);
+            Vector3 targetRotation = new Vector3(0, 0, angle);
+            rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(targetRotation), turnSpeed * Time.deltaTime));
+            rb.MovePosition(rb.position + ((Vector2)transform.right * moveSpeed * Time.deltaTime));
+            //Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, -10);
+
+        }
+    }
+    public void Disable(bool Dead)
+    {
+        if (Dead == true)
+        {
+            GetComponentInChildren<SpriteRenderer>().enabled = false;
+        }
     }
 
 }

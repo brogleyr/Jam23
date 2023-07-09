@@ -39,7 +39,7 @@ public class BulletBehavior : MonoBehaviour
         //If you hit the player
         else if(other.gameObject.CompareTag("Fish"))
         {
-            other.gameObject.GetComponent<HP>().TakeDamage(damage);
+            other.gameObject.GetComponent<HP>().TakeDamage(damage,"Whaler's Harpoon");
             Destroy(this.gameObject);
         }
             

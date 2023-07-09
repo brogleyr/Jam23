@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_fish = GameObject.Find("Fish").GetComponent<Fish>();
         gameOverText.SetText("");
         timer = 0f;
         transcendAnimator = GameObject.Find("CameraFadeAlpha").GetComponent<Animator>();
@@ -35,7 +36,7 @@ public class GameManager : MonoBehaviour
             finalTime.text = "You transcended in only\n" + timer + " fish seconds";
             transcendAnimator.SetTrigger("Transcend");
             transcended = true;
-            GameOver("Transcended");
+            GameOver("You transcended in only\n" + timer + " fish seconds");
         }
         
     }
@@ -44,7 +45,6 @@ public class GameManager : MonoBehaviour
     {
         gameIsOver = true;
         m_fish.moveSpeed = 0;
-        gameOverText.SetText("Game Over " + GameOverReason);
-        // SceneManager.LoadScene("StartScene");
+        gameOverText.SetText(GameOverReason);
     }
 }
