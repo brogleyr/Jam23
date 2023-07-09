@@ -30,7 +30,7 @@ public class SeaMineScript : MonoBehaviour
         //If the player goes over a mine trigger damage
         if (other.gameObject.CompareTag("Fish"))
         {
-            other.gameObject.GetComponent<HP>().TakeDamage(damage, "A Navy Sea Mine");
+            other.gameObject.GetComponent<HP>().TakeDamage(damage, "a Navy Sea Mine");
             Boom();
             
         }
@@ -40,6 +40,6 @@ public class SeaMineScript : MonoBehaviour
     {
         m_animator.SetTrigger("MineTrigger");
         audioSource.Play();
-        Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject, 1.5f);
     }
 }

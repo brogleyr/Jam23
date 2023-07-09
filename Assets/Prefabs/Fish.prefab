@@ -317,5 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  maxHealth: 100
   OG_Color: {r: 0, g: 0.4, b: 0.6, a: 0}
   Hurt_Color: {r: 1, g: 0.2783019, b: 0.2783019, a: 0}
+  healthBar: {fileID: 0}
