@@ -131,6 +131,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2726934802186721783, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726934802186721783, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_fontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726934802186721783, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 42
+      objectReference: {fileID: 0}
     - target: {fileID: 3795109549361283393, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -226,6 +238,42 @@ PrefabInstance:
     - target: {fileID: 6591713437446991913, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041310323572670430, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041310323572670430, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_margin.w
+      value: -54.725426
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041310323572670430, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_margin.z
+      value: -67.01921
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063261039998365324, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.49999976
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063261039998365324, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.6481873
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063261039998365324, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -115
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063261039998365324, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -42.591
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697949447391548805, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697949447391548805, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -74.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -415,6 +463,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6242657028692488411, guid: 7ffcacad8fb39644792643f269e7c03a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d4e843365de82c349a50971bcfa3918b, type: 3}
     - target: {fileID: 7447104139307853773, guid: 7ffcacad8fb39644792643f269e7c03a, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -573,10 +625,10 @@ RectTransform:
   m_Father: {fileID: 1771169656}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.39836144, y: 0.1856855}
-  m_AnchorMax: {x: 0.5973615, y: 0.327543}
-  m_AnchoredPosition: {x: 1.9545975, y: -60.393867}
-  m_SizeDelta: {x: -112.5551, y: -29.2122}
+  m_AnchorMin: {x: 0.411, y: 0.048}
+  m_AnchorMax: {x: 0.58900005, y: 0.245}
+  m_AnchoredPosition: {x: -0.045402527, y: -0.3939209}
+  m_SizeDelta: {x: -92.5551, y: -59.212204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1421824451
 MonoBehaviour:

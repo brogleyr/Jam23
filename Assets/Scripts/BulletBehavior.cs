@@ -9,12 +9,14 @@ public class BulletBehavior : MonoBehaviour
     Rigidbody2D rb;
     //Damage the bullet does
     public int damage = 5;
+    public AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         //Find the rigidbody attached to this object
         rb = this.GetComponent<Rigidbody2D>();
+        source = gameObject.GetComponent<AudioSource>();
         //Apply a forward vector to the bullet at a given speed
         rb.velocity = transform.right * speed;
         //Start countdown until bulletdespawn
@@ -40,7 +42,7 @@ public class BulletBehavior : MonoBehaviour
         else if(other.gameObject.CompareTag("Fish"))
         {
             other.gameObject.GetComponent<HP>().TakeDamage(damage,"A Whaler's Harpoon");
-            
+            source.Play();
             Destroy(this.gameObject);
         }
             
