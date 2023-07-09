@@ -13,7 +13,6 @@ public class Line : MonoBehaviour
     void Start()
     {
         lineRenderer.sortingOrder = 1;
-        lineRenderer.material = new Material (Shader.Find ("Sprites/Default"));
         lineRenderer.material.color = Color.black;
 
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();

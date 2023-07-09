@@ -18,7 +18,7 @@ public class NavyBoat : MonoBehaviour
     {
 
         m_shoooter = GetComponent<Shooter>();
-        m_avoidRocks = GetComponent<AvoidRocks>();
+        m_avoidRocks = GetComponentsInChildren<AvoidRocks>()[0];
         mineSpawnRate = 1/m_shoooter.rateOfFire;
     }
 
@@ -50,7 +50,6 @@ public class NavyBoat : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name);
         if (other.gameObject.tag == "Boat")
         {
                 //scoreManager.BoatCrash(transform);

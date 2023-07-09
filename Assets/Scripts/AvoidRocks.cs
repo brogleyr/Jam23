@@ -11,7 +11,6 @@ public class AvoidRocks : MonoBehaviour
     //Move the boat out of the way of rocks/other boats
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
         timer += Time.deltaTime;
         if (collision.CompareTag("Rock") || collision.CompareTag("Boat"))
         {
@@ -29,6 +28,6 @@ public class AvoidRocks : MonoBehaviour
             }
             else dir = -1;
         }
-        transform.parent.GetComponentInParent<Transform>().Rotate(Vector3.forward * 50 * dir * Time.deltaTime);
+        transform.parent.Rotate(Vector3.forward * 50 * dir * Time.deltaTime);
     }
 }
