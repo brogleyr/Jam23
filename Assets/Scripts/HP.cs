@@ -42,7 +42,7 @@ public class HP : MonoBehaviour
         {
             if (Health <= 0)
             {
-                m_gameManager.GameOver();
+                m_gameManager.GameOver("You Died");
             }
             scoreManager.ComboBreak();
         }
