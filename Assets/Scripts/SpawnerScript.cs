@@ -13,6 +13,7 @@ public class SpawnerScript : MonoBehaviour
     public GameObject boat;
     public GameObject whalingboat;
     public GameObject navyboat;
+    public GameObject water;
 
     //Spawn Boundries
     public float closeRockDistance;
