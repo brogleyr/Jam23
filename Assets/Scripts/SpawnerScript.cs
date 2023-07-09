@@ -45,6 +45,10 @@ public class SpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fishTransform)
+        {
+
+        }
         if (gameObjectFindCounter <= 0) {
             CurrentRocks = GameObject.FindGameObjectsWithTag("Rock").Length;
             CurrentBoats = GameObject.FindGameObjectsWithTag("Boat").Length;
