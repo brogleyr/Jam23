@@ -37,15 +37,13 @@ public class Turret : MonoBehaviour
     {
         isShooting = true;
 
-        if (animator != null) {
-            animator.SetBool("IsShooting", true);
+        if (animator != null)
+        {
+            animator.SetTrigger("Shoot");
         }
-        yield return new WaitForSeconds(1 / shooter.rateOfFire);
         shooter.Shoot();
+        yield return new WaitForSeconds(1 / shooter.rateOfFire);
         isShooting = false;
-        if (animator != null) {
-            animator.SetBool("IsShooting", false);
-        }
     }
 
      void OnTriggerEnter2D(Collider2D other)

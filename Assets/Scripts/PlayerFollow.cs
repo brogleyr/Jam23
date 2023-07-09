@@ -13,8 +13,10 @@ public class PlayerFollow : MonoBehaviour
     Camera cam;
     float zoom;
     public float zoomToSpeedRatio = 0.1f;
+    private GameManager m_gameManager;
     private void Start()
     {
+        m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         target = GameObject.Find("Fish").GetComponent<Transform>();
         offset = transform.position - target.transform.GetChild(2).position;
         cam = GetComponent<Camera>();
@@ -24,9 +26,13 @@ public class PlayerFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        cam.orthographicSize = zoom + ((target.GetComponent<Fish>().moveSpeed * zoomToSpeedRatio) * (1 * zoomToSpeedRatio)- 5);
-        Vector3 desiredPosition = target.transform.GetChild(2).position + offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = desiredPosition;
+        if (!m_gameManager.gameIsOver)
+        {
+            cam.orthographicSize = zoom + ((target.GetComponent<Fish>().moveSpeed * zoomToSpeedRatio) * (1 * zoomToSpeedRatio) - 5);
+            Vector3 desiredPosition = target.transform.GetChild(2).position + offset;
+            Vector3 smoothPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = desiredPosition;
+        }
+        
     }
 }
