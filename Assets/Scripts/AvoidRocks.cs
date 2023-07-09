@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class AvoidRocks : MonoBehaviour
 {
     private float dir = 1;
+    private float timer = 0;
 
     //Move the boat out of the way of rocks/other boats
     private void OnTriggerStay2D(Collider2D collision)
     {
+        Debug.Log(collision.name);
+        timer += Time.deltaTime;
         if (collision.CompareTag("Rock") || collision.CompareTag("Boat"))
         {
             Turn();
@@ -16,13 +20,15 @@ public class AvoidRocks : MonoBehaviour
     }
     public void Turn()
     {
-        //Flips if ship will go left or right
-        //Putting this in when mines spawn so everytime it drops a mine it has a chance to swap its direction when coming near a rock
-        if (Random.Range(0, 9) > 4)
+        if(timer > 5)
         {
-            dir = 1;
+            //Flips if ship will go left or right
+            if (Random.Range(0, 9) > 4)
+            {
+                dir = 1;
+            }
+            else dir = -1;
         }
-        else dir = -1;
-        GetComponentInParent<Transform>().Rotate(Vector3.forward * 50 * dir * Time.deltaTime);
+        transform.parent.GetComponentInParent<Transform>().Rotate(Vector3.forward * 50 * dir * Time.deltaTime);
     }
 }
