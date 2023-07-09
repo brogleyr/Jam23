@@ -74,7 +74,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Health: 0
+    - _Health: 0.7
     - _HighThresh: 0.6
     - _LowThresh: 0.12
     - _Metallic: 0
