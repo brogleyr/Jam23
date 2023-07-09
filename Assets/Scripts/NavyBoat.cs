@@ -47,15 +47,4 @@ public class NavyBoat : MonoBehaviour
             }
         }
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Boat")
-        {
-                //scoreManager.BoatCrash(transform);
-                //animator.SetTrigger("BoatDestroyed");
-
-            Destroy(gameObject, 1f);
-        }
-    }
 }

@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 3956185536972909249}
   - component: {fileID: 2899655499308320320}
   - component: {fileID: 5785620379981624507}
+  - component: {fileID: 8902451011061269987}
   m_Layer: 8
   m_Name: Fisher
   m_TagString: Boat
@@ -555,3 +556,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   despawnCounter: 60
   despawnDistance: 100
+--- !u!114 &8902451011061269987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8481134755223465721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8b07dca5f2ce14993faf64663358fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 922418130174743042}

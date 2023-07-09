@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4821628254220201854
 MonoBehaviour:
@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rock: {fileID: 6341767605017578815, guid: 86d66ab5921101347afaa3458172a5d7, type: 3}
   boat: {fileID: 8481134755223465721, guid: 182ab5594179370468227a648a5f2859, type: 3}
+  whalingboat: {fileID: 6960379855402550709, guid: 592bf11f6b4476740b6dfec93e7fce64, type: 3}
+  navyboat: {fileID: 2899050792599157189, guid: 5f4f5f470c372cc41bd2cea7ce36448e, type: 3}
   closeRockDistance: 150
   farRockDistance: 600
   closeBoatDistance: 50

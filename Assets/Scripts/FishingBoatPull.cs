@@ -51,14 +51,18 @@ public class FishingBoatPull : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if (other.gameObject.tag == "Rock") {
-            if (attached) {
-                Destroy(transform.GetChild(0).gameObject);
-                attached = false;
-                scoreManager.BoatCrash(transform);
-                animator.SetTrigger("BoatDestroyed");
-            }
-            Destroy(gameObject, 1f);
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.tag == "Rock" && attached) {
+            Destroy(transform.GetChild(0).gameObject);
+            attached = false;
+            GetComponent<Scuttle>().ScuttleBoat();
+        }
+        
+        if (other.gameObject.tag == "HostileBoat" && attached) {
+            Destroy(transform.GetChild(0).gameObject);
+            attached = false;
+            other.gameObject.GetComponent<Scuttle>().ScuttleBoat();
+            GetComponent<Scuttle>().ScuttleBoat();
         }
     }
 

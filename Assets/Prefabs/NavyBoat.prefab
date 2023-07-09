@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8859389405347425897}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 991587264325690247}
   - component: {fileID: 3795613568844382422}
   - component: {fileID: 5758882549755721832}
-  m_Layer: 8
+  - component: {fileID: 4547870532627094036}
+  m_Layer: 6
   m_Name: NavyBoat
-  m_TagString: Untagged
+  m_TagString: HostileBoat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +93,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -173,6 +174,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4907797432989351831, guid: bcedf3c1cf2822f428a69fa0f8121283, type: 3}
   rateOfFire: 0.2
+--- !u!114 &4547870532627094036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899050792599157189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8b07dca5f2ce14993faf64663358fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5856194844611675454}
 --- !u!1 &6094426107054271240
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +198,7 @@ GameObject:
   - component: {fileID: 3907824984732188869}
   - component: {fileID: 8595850965489639880}
   - component: {fileID: 5856194844611675454}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +304,7 @@ GameObject:
   - component: {fileID: 5264322134131289887}
   - component: {fileID: 2021699109791205863}
   - component: {fileID: 9094565658378341937}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

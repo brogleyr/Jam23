@@ -9,6 +9,7 @@ TagManager:
   - Fish
   - Bullet
   - Mouth
+  - HostileBoat
   layers:
   - Default
   - TransparentFX

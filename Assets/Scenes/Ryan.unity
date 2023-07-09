@@ -590,10 +590,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4504387546584958083, guid: 86d66ab5921101347afaa3458172a5d7, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2138,6 +2134,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7041310323572670430, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
       propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063261039998365324, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697949447391548805, guid: 7e1d92553c459b2478d5331cc914aba0, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
