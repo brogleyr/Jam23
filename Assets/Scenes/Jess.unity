@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3af5244f5212f48834d95b96f22e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBtwSpawns: 0.2
+  TimeBtwSpawns: 0.125
   wave: {fileID: 3087547094312639640, guid: cf2da70aecbe413418f0488a3ecea4fa, type: 3}
 --- !u!114 &297554417 stripped
 MonoBehaviour:
