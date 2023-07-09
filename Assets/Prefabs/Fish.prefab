@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7513149706328249874}
-  turnSpeed: 1000
+  turnSpeed: 775
   moveSpeed: 0
   baseMoveSpeed: 20
   speedGrowthFactor: 1
