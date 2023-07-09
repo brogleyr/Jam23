@@ -11,7 +11,9 @@ public class HP : MonoBehaviour
     public Color OG_Color;
     public Color Hurt_Color;
     private ScoreManager scoreManager;
-
+    GameManager m_gameManager;
+    Animator animator;
+    Scuttle m_scuttle;
     void Start()
     {
         //Fetch the SpriteRenderer from the GameObject
@@ -19,8 +21,9 @@ public class HP : MonoBehaviour
         //Set the GameObject's Color quickly to a set Color (blue)
         OG_Color = m_SpriteRenderer.color;
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        
-        
+        m_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
+
     }
 
     //instantiate when you take damage
@@ -35,7 +38,12 @@ public class HP : MonoBehaviour
             Die();
         }
 
-        if (name == "Fish") {
+        if (name == "Fish") 
+        {
+            if (Health <= 0)
+            {
+                m_gameManager.GameOver();
+            }
             scoreManager.ComboBreak();
         }
     }
@@ -45,23 +53,38 @@ public class HP : MonoBehaviour
 
         m_SpriteRenderer.color = Hurt_Color;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.2f);
         
+        m_SpriteRenderer.color = OG_Color;
+
+        yield return new WaitForSeconds(0.2f);
+
+        m_SpriteRenderer.color = Hurt_Color;
+
+        yield return new WaitForSeconds(0.2f);
+
+        m_SpriteRenderer.color = OG_Color;
+
+        yield return new WaitForSeconds(0.2f);
+
+        m_SpriteRenderer.color = Hurt_Color;
+
+        yield return new WaitForSeconds(0.2f);
+
         m_SpriteRenderer.color = OG_Color;
 
     }
     void Die ()
     {
         //death animation
+        if (m_scuttle != null)
+        {
+            m_scuttle.ScuttleBoat();
+        }
 
         //destroy
         Destroy(gameObject);
         
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

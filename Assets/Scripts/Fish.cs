@@ -35,7 +35,9 @@ public class Fish : MonoBehaviour
     {
         //moveSpeed = Mathf.Min(baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo()), topSpeed);
         //float newScale = Mathf.Min(baseScale + (scaleGrowthFactor * scoreManager.GetCombo()), topScale);
-        moveSpeed = baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo());
+        if (!gameManager.gameIsOver)
+            moveSpeed = baseMoveSpeed + (speedGrowthFactor * scoreManager.GetCombo());
+
         float newScale = baseScale + (scaleGrowthFactor * scoreManager.GetCombo());
 
         transform.localScale = new Vector3(newScale, newScale, newScale);
