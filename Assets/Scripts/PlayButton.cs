@@ -11,4 +11,8 @@ public class PlayButton : MonoBehaviour
         SceneManager.LoadScene(gotoScene);
         //SceneManager.LoadScene("Nick");
     }
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
