@@ -30,8 +30,6 @@ public class BulletBehavior : MonoBehaviour
     //when the trigger finds a fish or rock destroy the bullet and attempt to deal damage
     void OnTriggerEnter2D(Collider2D other)
     {
-        //then say what you hit
-        Debug.Log(other.name);
         //If you hit a rock
         if (other.gameObject.tag == "Rock")
         {

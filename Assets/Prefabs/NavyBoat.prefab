@@ -126,11 +126,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.422991, y: 0.0000001696338}
-  m_Size: {x: 5.0416656, y: 2.0970008}
+  m_Offset: {x: -2.23, y: 0}
+  m_Size: {x: 6.55, y: 2.64}
   m_Direction: 1
 --- !u!114 &991587264325690247
 MonoBehaviour:
@@ -159,7 +159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  SeaMine: {fileID: 4907797432989351831, guid: bcedf3c1cf2822f428a69fa0f8121283, type: 3}
 --- !u!114 &5758882549755721832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4907797432989351831, guid: bcedf3c1cf2822f428a69fa0f8121283, type: 3}
-  rateOfFire: 1
+  rateOfFire: 0.2
 --- !u!1 &6094426107054271240
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,9 +289,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5264322134131289887}
   - component: {fileID: 2021699109791205863}
+  - component: {fileID: 9094565658378341937}
   m_Layer: 8
   m_Name: Detector
-  m_TagString: Boat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,3 +347,15 @@ CircleCollider2D:
   m_Offset: {x: 10.64, y: 0}
   serializedVersion: 2
   m_Radius: 3.89
+--- !u!114 &9094565658378341937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323550395315630833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb544d89645fbfa488a68755a73a52a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

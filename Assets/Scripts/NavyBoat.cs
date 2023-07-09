@@ -7,29 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class NavyBoat : MonoBehaviour
 {
-    public float speed = 0;
+    public float speed = 6;
 
-    private float mineSpawnRate = 5;
+    private float mineSpawnRate;
     private float mineSpawnTime = 0;
-    private float dir = 1;
-
-    public GameObject SeaMine;
-
     private Shooter m_shoooter;
+    private AvoidRocks m_avoidRocks;
     // Start is called before the first frame update
     void Start()
     {
+
         m_shoooter = GetComponent<Shooter>();
+        m_avoidRocks = GetComponent<AvoidRocks>();
+        mineSpawnRate = 1/m_shoooter.rateOfFire;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         //Move the boat forward
         transform.position += transform.right * speed * Time.deltaTime;
-
-
 
         //Mine Spawner
         if (mineSpawnTime < mineSpawnRate)
@@ -46,23 +43,14 @@ public class NavyBoat : MonoBehaviour
             //Putting this in when mines spawn so everytime it drops a mine it has a chance to swap its direction when coming near a rock
             if (Random.Range(0, 9) > 4)
             {
-                dir = 1;
+                m_avoidRocks.Turn();
             }
-            else dir = -1;
         }
     }
 
-
-    //Move the boat out of the way of rocks/other boats
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Rock"))
-        {
-            transform.Rotate(Vector3.forward * 50* dir * Time.deltaTime);
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D other)
-    {
+        Debug.Log(other.name);
         if (other.gameObject.tag == "Boat")
         {
                 //scoreManager.BoatCrash(transform);
